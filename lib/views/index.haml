@@ -1,0 +1,16 @@
+%h1.title Title 
+
+%a.btn.btn-primary{href: "/new_product"} Create New Product
+
+%table.table
+    %thead
+        %tr
+            %th Name
+            %th Actions
+    %tbody
+        - products.each do |product|
+            %tr
+                %td= product.name
+                %td
+                    .btn-group
+                        %a{href: "/delete_product/#{product.id}", class: 'btn btn-danger'} Delete
